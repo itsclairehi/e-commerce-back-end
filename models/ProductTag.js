@@ -15,13 +15,15 @@ ProductTag.init(
     product_id: {
       type: DataTypes.INTEGER,
       references: {
-        //!! references product model id
+        model: 'product',
+        key: id
       }
     },
     tag_id: {
       type:DataTypes.INTEGER,
       references: {
-        //!! referenes tag model's id
+        model: 'tag',
+        key: id
       }
     }
   },

@@ -23,21 +23,22 @@ Product.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
-        //!!validate that price is a decimal
+        isDecimal: true
       },
     },
     stocke: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      // !!set a default value of 10,
+      defaultValue: 10,
       validate: {
-        //!!validate that value is numeric
+        isNumeric: true
       }
     },
     category_id: {
       type: DataTypes.INTEGER,
       references: {
-        //reference category model's id
+        model: 'category',
+        key: 'id'
       }
     }
   },
